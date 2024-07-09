@@ -29,10 +29,11 @@ export function parseItem(reader: SaveFileReader, owner: ItemsOwner) {
       parseQuantified(stream, item);
       parseModifiers(stream, item);
     } catch (e) {
-      if (e instanceof ItemParsingError) {
-        throw e;
-      }
-      throw new ItemParsingError(item, (e as Error).message);
+      console.log(`@@@ couldn't parse item: `, item)
+      // if (e instanceof ItemParsingError) {
+      //   throw e;
+      // }
+      // throw new ItemParsingError(item, (e as Error).message);
     }
   }
 
